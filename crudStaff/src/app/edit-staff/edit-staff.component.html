@@ -1,1 +1,84 @@
 <p>edit-staff works!</p>
+{{staffId}}
+{{staff | json}}
+
+<!-- <p>add-staff works!</p> -->
+<div class="container">
+    <h1 class="text-center">Add Staff Here</h1>
+
+    <form [formGroup]="editForm" (ngSubmit)="updateStaff(staff.id)">
+
+        <div class="form-group mt-3">
+            <label for="firstName"> First Name</label>
+            <input type="text" class="form-control" formControlName="firstName" value="{{staff.firstName}}" required>
+            <span style="color: red;"
+                *ngIf="firstName && firstName.touched && firstName.invalid"
+            >First Name is required. Min Length is 5</span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="lastName"> Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName" value="{{staff.lastName}}" required>
+            <span style="color: red;"
+                *ngIf="lastName && lastName.touched && lastName.invalid"
+            >Last Name is required. Min Length is 5</span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="role">Title</label>
+            <select class="form-control" name="title" formControlName="title" required>
+                <option disabled selected>---title here---</option>
+                <!-- <option value="Mr" *ngIf="{{staff.title === 'Mr' ? 'selected' : null}}">Mr</option> -->
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Ms">Ms</option>
+            </select>
+
+            <span style="color: red;"
+                *ngIf="title && title.touched && title.invalid"
+            >Title is required</span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" formControlName="email" value="{{staff.email}}" required>
+            <span style="color: red;"
+                *ngIf="email && email.touched && email.invalid"
+            >Email is required. Min Length is 5</span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="role">Role</label>
+            <select class="form-control" name="role" formControlName="role" required>
+                <option disabled selected>---role here---</option>
+                    <!-- <option value="Mr" *ngIf="{{staff.title === 'Mr' ? 'selected' : null}}">Mr</option> -->
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+            </select>
+
+            <span style="color: red;"
+                *ngIf="role && role.touched && role.invalid"
+            >Role is required</span>
+        </div>
+
+        <div class="form-group mt-3"></div>
+        <div class="form-group mt-3">
+            <label for="name">Password</label>
+            <input type="password" class="form-control" formControlName="password" value="{{staff.password}}" required>
+            <span style="color: red;"
+            *ngIf="password && password.touched && password.invalid"
+        >Password is required. Min Length is 5</span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="name">Confirm Password</label>
+            <input type="password" class="form-control" formControlName="confirmPassword" value="{{staff.confirmPassword}}" required>
+            <span style="color: red;"
+                *ngIf="confirmPassword && confirmPassword.touched && confirmPassword.invalid"
+            >Password is required. Min Length is 5</span>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary mt-3">Edit</button>
+    </form>
+</div>
+

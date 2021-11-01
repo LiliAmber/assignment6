@@ -3,7 +3,7 @@ import { User } from '../Models/User';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, first } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +20,24 @@ export class UserServiceService {
       .pipe(catchError(this.handleError))
   }
 
+  getStaffById(id: number): Observable<any> {
+    let api = `${this.endpoint}/Users/${id}`
+    return this.http
+      .get(api)
+      .pipe(catchError(this.handleError))
+  }
+
   createStaff(staff: User): Observable<any> {
     let api = `${this.endpoint}/Users`
     return this.http
       .post(api, staff)
+      .pipe(catchError(this.handleError))
+  }
+
+  updateStaff(id: number, staff: User): Observable<any> {
+    let api = `${this.endpoint}/Users/${id}`
+    return this.http
+      .put(api, staff)
       .pipe(catchError(this.handleError))
   }
 

@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: StaffListComponent},
   {path: 'addStaff', component: AddStaffComponent},
-  {path: 'staff/edit/:id', component: EditStaffComponent},
+  {path: 'staff/:id', component: EditStaffComponent},
   // {path: 'staff/delete/:id'}
 ];
 

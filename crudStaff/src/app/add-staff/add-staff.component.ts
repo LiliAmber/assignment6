@@ -9,6 +9,7 @@ import { UserServiceService } from '../services/user-service.service';
   styleUrls: ['./add-staff.component.css']
 })
 export class AddStaffComponent implements OnInit {
+  
   roles = ['Admin', 'User']
   titles = ['Mr', 'Mrs', 'Ms']
 
