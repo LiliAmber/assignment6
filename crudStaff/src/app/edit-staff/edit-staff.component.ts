@@ -80,7 +80,7 @@ export class EditStaffComponent implements OnInit {
   }
 
   getStaffById(id: number) {
-    console.log('aku ke trigger')
+    console.log('get byId ke trigger')
     console.log(id, "id product")
     console.log(typeof id, 'id data type')
     this.staffService 

@@ -25,7 +25,7 @@
                 <th>{{staff.lastName}}</th>
                 <th>{{staff.role}}</th>
                 <th>{{staff.email}}</th>
-                <th><a [routerLink]="['/staff/', staff.id]">edit</a> | <a href="">delete</a></th>
+                <th><a [routerLink]="['/staff/', staff.id]">edit</a> | <a (click)="deleteStaff(staff.id)">delete</a></th>
             </tr>
         </tbody>
     </table>

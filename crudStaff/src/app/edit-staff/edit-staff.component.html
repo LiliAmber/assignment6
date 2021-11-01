@@ -13,7 +13,7 @@
             <input type="text" class="form-control" formControlName="firstName" value="{{staff.firstName}}" required>
             <span style="color: red;"
                 *ngIf="firstName && firstName.touched && firstName.invalid"
-            >First Name is required. Min Length is 5</span>
+            >First Name is required</span>
         </div>
 
         <div class="form-group mt-3">
@@ -21,7 +21,7 @@
             <input type="text" class="form-control" formControlName="lastName" value="{{staff.lastName}}" required>
             <span style="color: red;"
                 *ngIf="lastName && lastName.touched && lastName.invalid"
-            >Last Name is required. Min Length is 5</span>
+            >Last Name is required</span>
         </div>
 
         <div class="form-group mt-3">
@@ -29,6 +29,7 @@
             <select class="form-control" name="title" formControlName="title" required>
                 <option disabled selected>---title here---</option>
                 <!-- <option value="Mr" *ngIf="{{staff.title === 'Mr' ? 'selected' : null}}">Mr</option> -->
+                <!-- *ngIf="profileForm.get('item').value == 'Software'" -->
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>
                 <option value="Ms">Ms</option>
@@ -44,7 +45,7 @@
             <input type="email" class="form-control" formControlName="email" value="{{staff.email}}" required>
             <span style="color: red;"
                 *ngIf="email && email.touched && email.invalid"
-            >Email is required. Min Length is 5</span>
+            >Email is required</span>
         </div>
 
         <div class="form-group mt-3">
@@ -67,7 +68,7 @@
             <input type="password" class="form-control" formControlName="password" value="{{staff.password}}" required>
             <span style="color: red;"
             *ngIf="password && password.touched && password.invalid"
-        >Password is required. Min Length is 5</span>
+        >Password is required. Min Length is 6</span>
         </div>
 
         <div class="form-group mt-3">
@@ -75,7 +76,7 @@
             <input type="password" class="form-control" formControlName="confirmPassword" value="{{staff.confirmPassword}}" required>
             <span style="color: red;"
                 *ngIf="confirmPassword && confirmPassword.touched && confirmPassword.invalid"
-            >Password is required. Min Length is 5</span>
+            >Password is required. Min Length is 6</span>
         </div>
 
         <button type="submit" class="btn btn-block btn-primary mt-3">Edit</button>

@@ -41,6 +41,13 @@ export class UserServiceService {
       .pipe(catchError(this.handleError))
   }
 
+  deleteStaff(id: number): Observable<any> {
+    let api = `${this.endpoint}/Users/${id}`
+    return this.http
+      .delete(api)
+      .pipe(catchError(this.handleError))
+  }
+
   handleError(err: HttpErrorResponse) {
     if(err.error instanceof ErrorEvent) {
       return throwError(err.error.message)

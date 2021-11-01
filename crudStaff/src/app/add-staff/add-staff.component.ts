@@ -9,7 +9,7 @@ import { UserServiceService } from '../services/user-service.service';
   styleUrls: ['./add-staff.component.css']
 })
 export class AddStaffComponent implements OnInit {
-  
+
   roles = ['Admin', 'User']
   titles = ['Mr', 'Mrs', 'Ms']
 
@@ -79,7 +79,7 @@ export class AddStaffComponent implements OnInit {
   createStaff() {
     console.log(this.registerForm, '<<<')
     this.staffService.createStaff(this.registerForm.value).subscribe((res: any) => {
-      console.log('aku ke triggerrr')
+      console.log('create ke triggerrr')
       if(res) {
         console.log(res, '<<<<res')
         this.registerForm.reset()

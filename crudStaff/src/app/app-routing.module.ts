@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: 'home', component: StaffListComponent},
   {path: 'addStaff', component: AddStaffComponent},
   {path: 'staff/:id', component: EditStaffComponent},
-  // {path: 'staff/delete/:id'}
+  {path: 'delete/:id', redirectTo: '/home'}
 ];
 
 @NgModule({
@@ -18,3 +18,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+ 
