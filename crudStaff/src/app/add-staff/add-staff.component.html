@@ -1,0 +1,74 @@
+<!-- <p>add-staff works!</p> -->
+<div class="container">
+    <h1 class="text-center">Add Staff Here</h1>
+
+    <form [formGroup]="registerForm" (ngSubmit)="createStaff()">
+
+        <div class="form-group mt-3">
+            <label for="firstName"> First Name</label>
+            <input type="text" class="form-control" formControlName="firstName" placeholder="Enter first name" required>
+            <span style="color: red;"
+                *ngIf="firstName && firstName.touched && firstName.invalid"
+            >First Name is required. Min Length is 5</span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="lastName"> Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName" placeholder="Enter last name" required>
+            <span style="color: red;"
+                *ngIf="lastName && lastName.touched && lastName.invalid"
+            >Last Name is required. Min Length is 5</span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="role">Title</label>
+            <select class="form-control" name="title" formControlName="title" required>
+                <option value="">---title here---</option>
+                <option *ngFor="let title of titles" [value]="title">{{title}}</option>
+            </select>
+
+            <span style="color: red;"
+                *ngIf="title && title.touched && title.invalid"
+            >Title is required</span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
+            <span style="color: red;"
+                *ngIf="email && email.touched && email.invalid"
+            >Email is required. Min Length is 5</span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="role">Role</label>
+            <select class="form-control" name="role" formControlName="role" required>
+                <option value="">---role here---</option>
+                <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+            </select>
+
+            <span style="color: red;"
+                *ngIf="role && role.touched && role.invalid"
+            >Role is required</span>
+        </div>
+
+        <div class="form-group mt-3"></div>
+        <div class="form-group mt-3">
+            <label for="name">Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter password" required>
+            <span style="color: red;"
+            *ngIf="password && password.touched && password.invalid"
+        >Password is required. Min Length is 5</span>
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="name">Confirm Password</label>
+            <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Enter confirm password" required>
+            <span style="color: red;"
+                *ngIf="confirmPassword && confirmPassword.touched && confirmPassword.invalid"
+            >Password is required. Min Length is 5</span>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary mt-3">Add</button>
+    </form>
+</div>
