@@ -10,7 +10,7 @@
 
         <div class="form-group mt-3">
             <label for="firstName"> First Name</label>
-            <input type="text" class="form-control" formControlName="firstName" value="{{staff.firstName}}" required>
+            <input type="text" class="form-control" formControlName="firstName" required>
             <span style="color: red;"
                 *ngIf="firstName && firstName.touched && firstName.invalid"
             >First Name is required</span>
@@ -18,7 +18,7 @@
 
         <div class="form-group mt-3">
             <label for="lastName"> Last Name</label>
-            <input type="text" class="form-control" formControlName="lastName" value="{{staff.lastName}}" required>
+            <input type="text" class="form-control" formControlName="lastName" required>
             <span style="color: red;"
                 *ngIf="lastName && lastName.touched && lastName.invalid"
             >Last Name is required</span>
@@ -27,7 +27,7 @@
         <div class="form-group mt-3">
             <label for="role">Title</label>
             <select class="form-control" name="title" formControlName="title" required>
-                <option disabled selected>---title here---</option>
+                <!-- <option disabled>---title here---</option> -->
                 <!-- <option value="Mr" *ngIf="{{staff.title === 'Mr' ? 'selected' : null}}">Mr</option> -->
                 <!-- *ngIf="profileForm.get('item').value == 'Software'" -->
                 <option value="Mr">Mr</option>
@@ -42,7 +42,7 @@
 
         <div class="form-group mt-3">
             <label for="email">Email Address</label>
-            <input type="email" class="form-control" formControlName="email" value="{{staff.email}}" required>
+            <input type="email" class="form-control" formControlName="email" required>
             <span style="color: red;"
                 *ngIf="email && email.touched && email.invalid"
             >Email is required</span>
@@ -51,7 +51,7 @@
         <div class="form-group mt-3">
             <label for="role">Role</label>
             <select class="form-control" name="role" formControlName="role" required>
-                <option disabled selected>---role here---</option>
+                <!-- <option disabled>---role here---</option> -->
                     <!-- <option value="Mr" *ngIf="{{staff.title === 'Mr' ? 'selected' : null}}">Mr</option> -->
                 <option value="Admin">Admin</option>
                 <option value="User">User</option>
@@ -65,7 +65,7 @@
         <div class="form-group mt-3"></div>
         <div class="form-group mt-3">
             <label for="name">Password</label>
-            <input type="password" class="form-control" formControlName="password" value="{{staff.password}}" required>
+            <input type="password" class="form-control" formControlName="password" required>
             <span style="color: red;"
             *ngIf="password && password.touched && password.invalid"
         >Password is required. Min Length is 6</span>
@@ -73,7 +73,7 @@
 
         <div class="form-group mt-3">
             <label for="name">Confirm Password</label>
-            <input type="password" class="form-control" formControlName="confirmPassword" value="{{staff.confirmPassword}}" required>
+            <input type="password" class="form-control" formControlName="confirmPassword" required>
             <span style="color: red;"
                 *ngIf="confirmPassword && confirmPassword.touched && confirmPassword.invalid"
             >Password is required. Min Length is 6</span>

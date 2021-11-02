@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../Models/User';
 import { UserServiceService } from '../services/user-service.service';
 
@@ -13,7 +13,7 @@ export class StaffListComponent implements OnInit {
   staffId: number
   staffs: User [] = []
 
-  constructor(private staffService: UserServiceService, private activatedRoute: ActivatedRoute) { 
+  constructor(private staffService: UserServiceService, private activatedRoute: ActivatedRoute, public route: Router) { 
     this.staffId = this.activatedRoute.snapshot.params.id
   }
 
@@ -32,6 +32,13 @@ export class StaffListComponent implements OnInit {
     console.log('delete ke trigger')
     this.staffService
     .deleteStaff(id)
-    .subscribe(staff => this.staffs = staff)
+    .subscribe((res: any) => {
+      if(res) {
+        console.log(res, '<<<<res delete')
+        // window.location.reload()
+        // this.route.navigate(['/home'])
+        this.getStaffs()
+      }
+    })
   }
 }

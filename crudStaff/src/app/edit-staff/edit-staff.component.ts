@@ -75,17 +75,29 @@ export class EditStaffComponent implements OnInit {
     return this.editForm.get('email')
   }
 
+
   ngOnInit(): void {
     this.getStaffById(this.staffId)
+    console.log(this.staff, '<<<')
+    console.log(this.staff.lastName)
   }
-
+  
   getStaffById(id: number) {
     console.log('get byId ke trigger')
     console.log(id, "id product")
     console.log(typeof id, 'id data type')
     this.staffService 
     .getStaffById(id)
-    .subscribe(s => this.staff = s)
+    .subscribe(s => {
+      console.log(s, "<<<<getbyId")
+      this.staff = s
+      //==setValue untuk editForm==
+      this.editForm.controls['title'].setValue(s.title)
+      this.editForm.controls['firstName'].setValue(s.firstName)
+      this.editForm.controls['lastName'].setValue(s.lastName)
+      this.editForm.controls['email'].setValue(s.email)
+      this.editForm.controls['role'].setValue(s.role)
+    })
   }
 
   updateStaff(id: number) {
