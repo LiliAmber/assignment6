@@ -77,11 +77,11 @@ export class AddStaffComponent implements OnInit {
   }
 
   createStaff() {
-    console.log(this.registerForm, '<<<')
+    // console.log(this.registerForm, '<<<')
     this.staffService.createStaff(this.registerForm.value).subscribe((res: any) => {
-      console.log('create ke triggerrr')
+      // console.log('create ke triggerrr')
       if(res) {
-        console.log(res, '<<<<res')
+        // console.log(res, '<<<<res')
         this.registerForm.reset()
         this.router.navigate(['/home'])
       }

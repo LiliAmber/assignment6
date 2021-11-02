@@ -83,13 +83,13 @@ export class EditStaffComponent implements OnInit {
   }
   
   getStaffById(id: number) {
-    console.log('get byId ke trigger')
-    console.log(id, "id product")
-    console.log(typeof id, 'id data type')
+    // console.log('get byId ke trigger')
+    // console.log(id, "id product")
+    // console.log(typeof id, 'id data type')
     this.staffService 
     .getStaffById(id)
     .subscribe(s => {
-      console.log(s, "<<<<getbyId")
+      // console.log(s, "<<<<getbyId")
       this.staff = s
       //==setValue untuk editForm==
       this.editForm.controls['title'].setValue(s.title)
@@ -101,12 +101,12 @@ export class EditStaffComponent implements OnInit {
   }
 
   updateStaff(id: number) {
-    console.log(this.editForm, '<<<edit form')
+    // console.log(this.editForm, '<<<edit form')
     this.staffService.updateStaff(id, this.editForm.value)
     .subscribe((res: any) => {
-      console.log('aku ke trigger')
+      // console.log('aku ke trigger')
       if(res) {
-        console.log(res, '<<<ress edit')
+        // console.log(res, '<<<ress edit')
         this.editForm.reset()
         this.router.navigate(['/home'])
       }

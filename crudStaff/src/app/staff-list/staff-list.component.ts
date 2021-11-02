@@ -19,7 +19,6 @@ export class StaffListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getStaffs()
-    // this.deleteStaff(this.staffId)
   }
 
   getStaffs() {
@@ -29,14 +28,12 @@ export class StaffListComponent implements OnInit {
   }
 
   deleteStaff(id: number) {
-    console.log('delete ke trigger')
+    // console.log('delete ke trigger')
     this.staffService
     .deleteStaff(id)
     .subscribe((res: any) => {
       if(res) {
-        console.log(res, '<<<<res delete')
-        // window.location.reload()
-        // this.route.navigate(['/home'])
+        // console.log(res, '<<<<res delete')
         this.getStaffs()
       }
     })
